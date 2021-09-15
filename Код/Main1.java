@@ -10,7 +10,10 @@ public class Main1 {
 
         scanner.close();
 
-        float result = (int) ((M - (int) M) * 1000) + (int) M / 1000f;
+        int a = (int) M;
+        float b = M - a;
+
+        float result = a / 1000f + Math.round(b * 1000);
 
         System.out.println(result);
     }

@@ -1,7 +1,10 @@
 def main():
     m = float(input("Enter M: "))
 
-    result = round((m - int(m)) * 1000) + int(m) / 1000
+    a = int(m)
+    b = m - a
+
+    result = a / 1000. + round(b * 1000)
 
     print(result)
 

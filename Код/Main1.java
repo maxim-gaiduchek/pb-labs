@@ -1,14 +1,7 @@
-import java.util.Scanner;
-
 public class Main1 {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Enter M: ");
-        float M = scanner.nextFloat();
-
-        scanner.close();
+        float M = 111.456f;
 
         int a = (int) M;
         float b = M - a;

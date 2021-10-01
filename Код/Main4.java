@@ -6,7 +6,7 @@ public class Main4 {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Enter x: ");
-        float x = scanner.nextFloat();
+        double x = scanner.nextDouble();
 
         System.out.print("Enter n: ");
         int n = scanner.nextInt();
@@ -22,7 +22,7 @@ public class Main4 {
         System.out.println(sum);
     }
 
-    private static double function(float x, int n) {
+    private static double function(double x, int n) {
         return Math.pow(x, n - 1) / fact(n - 1);
     }
 

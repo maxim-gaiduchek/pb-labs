@@ -7,8 +7,8 @@ def main():
 
         ams = 0
 
-        for i in range(length):
-            ams += (int(num / 10 ** i) % 10) ** length
+        for p in range(length):
+            ams += (int(num / 10 ** p) % 10) ** length
 
         if num == ams:
             print(num)

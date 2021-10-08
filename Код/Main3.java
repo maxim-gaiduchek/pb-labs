@@ -5,7 +5,7 @@ public class Main3 {
         double sum = 0, element = 0;
         int n = 1;
 
-        while (Math.abs(element - (element = function(x, n++))) >= error) {
+        while (Math.abs(element - (element = function(x, n++))) > error) {
             sum += element;
         }
 

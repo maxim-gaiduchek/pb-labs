@@ -13,6 +13,17 @@ public class Main3 {
         }
 
         System.out.println(sum);
+        System.out.println(n);
+
+        /*double x = 0.56, error = 1.0e-4;
+        double sum = 0, element = 0;
+        int n = 1;
+
+        while (Math.abs(element - (element = function(x, n++))) >= error) {
+            sum += element;
+        }
+
+        System.out.println(sum);*/
     }
 
     private static double function(double x, int n) {

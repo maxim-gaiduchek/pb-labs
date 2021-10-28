@@ -1,17 +1,16 @@
+from math import log10
+
+
 def main():
-    length = 2
-
     for num in range(10, 10000):
-        if num == 100 or num == 1000:
-            length += 1
-
+        length = int(log10(num)) + 1
         ams = 0
 
         for p in range(length):
             ams += (int(num / 10 ** p) % 10) ** length
 
         if num == ams:
-            print(num)
+            print(num, end=", ")
 
 
 if __name__ == '__main__':

@@ -42,10 +42,7 @@ public class Main8 {
 
     private static void printMatrix(int[][] matrix) {
         for (int[] arr : matrix) {
-            for (int i : arr) {
-                System.out.print(i + "\t");
-            }
-            System.out.println();
+            printArray(arr);
         }
         System.out.println();
     }

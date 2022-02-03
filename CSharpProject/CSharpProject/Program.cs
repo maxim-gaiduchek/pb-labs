@@ -72,11 +72,11 @@ internal static class Program
     {
         var text = sr.ReadToEnd().Split("\r\n");
         
-        for (var i = 1; i <= text.Length; i++)
+        for (var i = 0; i < text.Length; i++)
         {
-            if (i % 2 == 0) continue;
+            if (i % 2 == 1) continue;
             
-            var line = text[i - 1];
+            var line = text[i];
             var count = 0;
 
             foreach (var ch in line)
@@ -87,7 +87,7 @@ internal static class Program
                 }
             }
 
-            text[i - 1] = line + " " + count;
+            text[i] = line + " " + count;
         }
 
         return Strings.Join(text, "\r\n");

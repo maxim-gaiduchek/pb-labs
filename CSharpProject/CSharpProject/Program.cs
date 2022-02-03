@@ -76,10 +76,9 @@ internal static class Program
         {
             if (i % 2 == 1) continue;
             
-            var line = text[i];
             var count = 0;
 
-            foreach (var ch in line)
+            foreach (var ch in text[i])
             {
                 if (ch is >= '0' and <= '9')
                 {
@@ -87,7 +86,7 @@ internal static class Program
                 }
             }
 
-            text[i] = line + " " + count;
+            text[i] += " " + count;
         }
 
         return Strings.Join(text, "\r\n");

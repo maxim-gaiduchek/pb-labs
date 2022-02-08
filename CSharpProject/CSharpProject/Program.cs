@@ -46,21 +46,19 @@ internal static class Program
 
     private static void WriteToFileFromConsole(StreamWriter sw)
     {
-        Console.WriteLine("Enter text:");
+        string? line;
         
-        while (true)
+        Console.WriteLine("Enter text:");
+
+        do
         {
-            var line = Console.ReadLine();
+            line = Console.ReadLine();
 
             if (line != null && !line.Trim().Equals(""))
             {
                 sw.WriteLine(line);
             }
-            else
-            {
-                break;
-            }
-        }
+        } while (line != null && !line.Trim().Equals(""));
     }
 
     private static void ReadFromFileToConsole(StreamReader sr)

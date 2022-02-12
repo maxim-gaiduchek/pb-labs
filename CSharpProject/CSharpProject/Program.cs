@@ -6,7 +6,6 @@ internal static class Program
 {
     public static void Main()
     {
-        
         const string path = "file.txt";
         
         // writing to file
@@ -38,7 +37,7 @@ internal static class Program
         // reading from file to console
         sr = File.OpenText(path);
         
-        Console.WriteLine("After processing:");
+        Console.WriteLine("After parsing:");
         ReadFromFileToConsole(sr);
 
         sr.Close();
@@ -54,11 +53,11 @@ internal static class Program
         {
             line = Console.ReadLine();
 
-            if (line != null && !line.Trim().Equals(""))
+            if (line != null && (line.Length == 0 || line.Trim()[0] != 25))
             {
                 sw.WriteLine(line);
             }
-        } while (line != null && !line.Trim().Equals(""));
+        } while (line != null && (line.Length == 0 || line.Trim()[0] != 25));
     }
 
     private static void ReadFromFileToConsole(StreamReader sr)

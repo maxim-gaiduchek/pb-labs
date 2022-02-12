@@ -1,13 +1,15 @@
 path = "file.txt"
 
 with open(path, "a") as file:
+    print("Enter text:")
+
     while True:
         line = input()
 
-        if len(line) > 0:
-            file.write(line + "\n")
-        else:
+        if len(line) > 0 and line[0] == chr(25):  # CTRL + Y
             break
+        else:
+            file.write(line + "\n")
 
 with open(path, "r") as file:
     print("File text:")
@@ -20,8 +22,7 @@ with open(path, "r") as file:
     count = 1
 
     for line in file:
-        if line[-1] == "\n":
-            line = line[:-1]
+        line = line.strip()
 
         if count % 2 == 1:
             digits = 0

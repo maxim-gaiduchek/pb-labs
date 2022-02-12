@@ -11,11 +11,15 @@ with open(path, "a") as file:
         else:
             file.write(line + "\n")
 
+    print()
+
 with open(path, "r") as file:
     print("File text:")
 
     for line in file:
         print(line, end="")
+
+    print()
 
 text = ""
 with open(path, "r") as file:
@@ -35,6 +39,8 @@ with open(path, "r") as file:
 
         count += 1
         text += line + "\n"
+
+    print()
 
 with open(path, "w") as file:
     file.write(text)

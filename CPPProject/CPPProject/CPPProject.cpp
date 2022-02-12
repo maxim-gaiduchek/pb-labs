@@ -7,9 +7,13 @@ using namespace std;
 void write_from_stream_to_stream(istream &from, ostream &to) {
     string line;
 
-    while (getline(from, line)) {
+    while (!from.eof()) {
+        getline(from, line);
+
         if (line != "") {
             to << line << endl;
+        } else {
+            break;
         }
     }
 }
@@ -24,8 +28,7 @@ int main() {
         cout << "Enter text:" << endl;
 
         write_from_stream_to_stream(cin, fo);
-    }
-    else {
+    } else {
         cout << "File has not created!";
         return -1;
     }
@@ -39,15 +42,14 @@ int main() {
         cout << "Entered text:" << endl;
 
         write_from_stream_to_stream(fi, cout);
-    }
-    else {
+    } else {
         cout << "File has not created!";
         return -1;
     }
 
     fi.close();
 
-    // counting digits
+    //// counting digits
     fi.open(PATH);
 
     string text = "";
@@ -56,8 +58,10 @@ int main() {
         string line;
         int count = 1;
 
-        while (getline(fi, line)) {
-            if (count % 2 == 1) {
+        while (!fi.eof()) {
+            getline(fi, line);
+
+            if (count++ % 2 == 1) {
                 int digits = 0;
 
                 for (int i = 0; i < line.size(); i++) {
@@ -66,13 +70,12 @@ int main() {
                     }
                 }
 
-                line += " " + digits;
+                line += " " + to_string(digits);
             }
 
-            text += line;
+            text += line + "\n";
         }
-    }
-    else {
+    } else {
         cout << "File has not created!";
         return -1;
     }
@@ -84,6 +87,9 @@ int main() {
 
     if (fo.is_open()) {
         fo << text;
+    } else {
+        cout << "File has not created!";
+        return -1;
     }
     fo.close();
 
@@ -91,11 +97,10 @@ int main() {
     fi.open(PATH);
 
     if (fi.is_open()) {
-        cout << "Parced text:" << endl;
+        cout << endl << "Parced text:" << endl;
 
         write_from_stream_to_stream(fi, cout);
-    }
-    else {
+    } else {
         cout << "File has not created!";
         return -1;
     }

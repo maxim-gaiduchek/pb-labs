@@ -1,7 +1,7 @@
 ﻿namespace CSharpProject;
 
 [Serializable]
-public class PhoneCall
+public struct PhoneCall
 {
     public PhoneCall(string phoneNumber, string start, string end)
     {

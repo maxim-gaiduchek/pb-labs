@@ -11,7 +11,7 @@ public static class Program
         var (a, b, eps) = InputRange();
         var min = FindMinFormula(formulas, a, b, eps);
 
-        Console.WriteLine(min);
+        Console.WriteLine($"Min(x) = {min}");
     }
 
     private static Formula[] CreateFormulas()
@@ -22,12 +22,6 @@ public static class Program
 
         for (var i = 0; i < length; i++)
         {
-            formulas[i] = new Formula(
-                random.Next(-10, 10) * random.NextDouble(),
-                random.Next(-10, 10) * random.NextDouble(),
-                random.Next(-10, 10) * random.NextDouble(),
-                random.Next(-10, 10) * random.NextDouble()
-            );
             formulas[i] = new Formula(
                 random.Next(-10, 10) * random.NextDouble(),
                 random.Next(-10, 10) * random.NextDouble(),
@@ -79,6 +73,8 @@ public static class Program
                 {
                     min = formula;
                     minValue = value;
+                    
+                    Console.WriteLine($"f({x}) = {formula} = {value}");
                 }
                 else
                 {
@@ -86,6 +82,8 @@ public static class Program
                     
                     min = formula;
                     minValue = value;
+                    
+                    Console.WriteLine($"f({x}) = {formula} = {value}");
                 }
             }
         }

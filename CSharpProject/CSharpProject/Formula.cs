@@ -2,7 +2,7 @@
 
 public class Formula
 {
-    private double[] _coefficients;
+    private double[] _coefficients; // can be readony
 
     public Formula(double a3, double a2, double a1, double a0)
     {

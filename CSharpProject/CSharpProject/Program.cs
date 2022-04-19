@@ -6,19 +6,19 @@ class Program
     {
         var random = new Random();
         var n = random.Next(2, 6);
-        var matrix = new int[n][];
+        var matrixCoefficients = new int[n][];
         
         for (var i = 0; i < n; i++)
         {
-            matrix[i] = new int[n];
+            matrixCoefficients[i] = new int[n];
             
             for (var j = 0; j < n; j++)
             {
-                matrix[i][j] = random.Next(0, 10);
+                matrixCoefficients[i][j] = random.Next(0, 10);
             }
         }
 
-        Matrix matrix1 = new(n), matrix2 = new(matrix);
+        Matrix matrix1 = new(n), matrix2 = new(matrixCoefficients);
 
         Console.WriteLine("M1:");
         Console.WriteLine(matrix1);

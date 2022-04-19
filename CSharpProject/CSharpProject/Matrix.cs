@@ -25,7 +25,7 @@ public class Matrix
         Coefficients = matrix;
     }
 
-    private int[][] Coefficients { get; }
+    public int[][] Coefficients { get; }
 
     public int GetNorm() // m-norm, by rows
     {
